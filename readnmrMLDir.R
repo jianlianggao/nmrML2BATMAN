@@ -87,13 +87,14 @@ readnmrMLDir<-function(nmrMLDir)
   snam <- cbind("ppm", snam)
   sa <- cbind(rev(ppm),sa)
   ### --- get filename from datapath -----
-  snam_path<-nmrMLDir
+  ##move the below lines to the main calling func.
+  ##snam_path<-nmrMLDir
   
-  dir2 <-paste(snam_path, "/NMRData.txt", sep="")
+  ##dir2 <-paste(snam_path, "/NMRData.txt", sep="")
   
   colnames(sa)<- snam
-  
-  write.table(sa,file=dir2,row.names=FALSE,col.names=TRUE,quote=FALSE,sep = "\t")
+  ##move the below line to the main calling func.
+  ##write.table(sa,file=dir2,row.names=FALSE,col.names=TRUE,quote=FALSE,sep = "\t")
   
   warnRead<-options(warn = warnDef)
   return (sa)

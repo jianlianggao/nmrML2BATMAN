@@ -76,14 +76,14 @@ readnmrML<-function(nmrMLfile)
   } else {
     snam<- substr(nmrMLfile[[1]],1,nchar(nmrMLfile[[1]])-6)
   }
-  
-  dir2 <-paste(snam_path, "NMRData.txt", sep="")
+  ##move below line to the main calling func.
+  ##dir2 <-paste(snam_path, "NMRData.txt", sep="")
   ### --- combine the ppm/spectrum with title line
   snam <- cbind("ppm", snam)
   sa <- cbind(rev(ppm),spec1r)
   colnames(sa)<- snam
   warnRead<-options(warn = warnDef)
   
-  write.table(sa,file=dir2,row.names=FALSE,col.names=TRUE,quote=FALSE,sep = "\t")
+  ##write.table(sa,file=dir2,row.names=FALSE,col.names=TRUE,quote=FALSE,sep = "\t")
   return (sa)
 }

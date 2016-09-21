@@ -25,11 +25,11 @@ readnmrMLzip<-function(nmrMLzip)
     unzip(zipfile, exdir = datapath)
     unzipfile <- substr(zipfile, 1, nchar(zipfile)-4)
   }
-  readnmrMLDir(datapath)
+  sa<-readnmrMLDir(datapath)
   if (length(unzipfile)>0)
   {
     unlink(unzipfile, recursive = TRUE, force = FALSE)
   }
   warnRead<-options(warn = warnDef)
-  #return (sa)
+  return (sa)
 }
